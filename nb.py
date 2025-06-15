@@ -5,7 +5,7 @@ import numpy as np
 from wfdb import rdrecord, rdann
 
 # Paths
-data_path = r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\mit-bih-arrhythmia-database"
+data_path = r"/workspaces/ecg-beat-classifier/Data/mit-bih-arrhythmia-database"
 normal_beats = []
 abnormal_beats = []
 
@@ -44,8 +44,8 @@ for record_name in records:
     except Exception as e:
         print(f"⚠️ Skipped {record_name} due to error: {e}")
 
-np.save(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\normal_beats.npy", normal_beats)
-np.save(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\abnormal_beats.npy", abnormal_beats)
+np.save(r"/workspaces/ecg-beat-classifier/Data/normal_beats.npy", normal_beats)
+np.save(r"/workspaces/ecg-beat-classifier/Data/abnormal_beats.npy", abnormal_beats)
 
 print("✅ Beat extraction complete!")
 print(f"📦 Saved {len(normal_beats)} normal beats")
