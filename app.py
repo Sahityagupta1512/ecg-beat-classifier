@@ -11,8 +11,8 @@ st.title("📊 ECG Beat Viewer & Classifier")
 # ---------- Load Data ----------
 @st.cache_data
 def load_data():
-    normal = np.load(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\normal_beats.npy")
-    abnormal = np.load(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\abnormal_beats.npy")
+    normal = np.load(r"/workspaces/ecg-beat-classifier/Data/normal_beats.npy")
+    abnormal = np.load(r"/workspaces/ecg-beat-classifier/Data/abnormal_beats.npy")
     return normal, abnormal
 
 normal_beats, abnormal_beats = load_data()
@@ -22,7 +22,7 @@ labels = np.concatenate([["Normal"] * len(normal_beats), ["Abnormal"] * len(abno
 # ---------- Load Model ----------
 @st.cache_data
 def load_model():
-    return joblib.load(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\model\ecg_classifier.pkl")
+    return joblib.load(r"/workspaces/ecg-beat-classifier/model/ecg_classifier.pkl")
 
 model = load_model()
 
