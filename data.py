@@ -2,7 +2,7 @@ import wfdb
 import os
 
 # Create a folder to store data
-os.makedirs(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data/mit-bih-arrhythmia-database", exist_ok=True)
+os.makedirs(r"/workspaces/ecg-beat-classifier/Data/mit-bih-arrhythmia-database", exist_ok=True)
 
 # List of record names
 records = [
