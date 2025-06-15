@@ -6,8 +6,8 @@ import joblib
 import os
 
 # Load data
-normal_beats = np.load(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\normal_beats.npy")
-abnormal_beats = np.load(r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\Data\abnormal_beats.npy")
+normal_beats = np.load(r"/workspaces/ecg-beat-classifier/Data/normal_beats.npy")
+abnormal_beats = np.load(r"/workspaces/ecg-beat-classifier/Data/abnormal_beats.npy")
 
 # Labels: 0 = Normal, 1 = Abnormal
 X = np.concatenate([normal_beats, abnormal_beats])
@@ -25,5 +25,5 @@ y_pred = clf.predict(X_test)
 print("✅ Accuracy:", accuracy_score(y_test, y_pred))
 print("📊 Classification Report:\n", classification_report(y_test, y_pred, target_names=["Normal", "Abnormal"]))
 
-joblib.dump(clf, r"F:\2409029\Part 1 - Sem 2\FDS - Kalpesh Sir\ECG_Streamlitapp\model\ecg_classifier.pkl")
+joblib.dump(clf, r"/workspaces/ecg-beat-classifier/model/ecg_classifier.pkl")
 print("💾 Model saved to model/ecg_classifier.pkl")
